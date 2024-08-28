@@ -1,0 +1,24 @@
+<project name="disk_manager" default="test_all">
+    <property name="module.name" value="disk_manager"/>
+    <property file="${user.home}/EniqBuild/BH/build.properties"/>
+    <property name="ant.common" value="${cc.base}/tools/ant_common"/>
+    <property file="${ant.common}/common.properties"/>
+	<property name="module.build" value="${module.disk_manager.build}"/>
+    <property name="module.base" value="${module.disk_manager.base}"/>
+    <property name="module.dependants" value="${module.disk_manager.dependants}"/>
+    <import file="${ant.common}/common.xml"/>
+    <property name="tests.to.run" value="**/*Test.class"/>
+
+    <property name="mods.needed" value="repository, engine, common_utilities"/>
+	
+	<path id="disk_manager.lib.classpath">
+		<path refid="plaform.lib.classpath"/>
+	 	<path location="${module.engine.pkg}"/>	 	  
+	 	<path location="${module.repository.pkg}"/>
+		<path location="${module.common_utilities.pkg}"/>	 	
+	 </path>
+	 <path id="disk_manager.test.classpath">
+	 	<path refid="platform.test.classpath"/>
+	    <path refid="disk_manager.lib.classpath"/>
+	 </path>
+</project>

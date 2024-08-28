@@ -1,0 +1,9 @@
+<project name="install" basedir="." default="all">
+
+	<property name="dcinstall.require.common" value="> 5-0-0b14"/>
+
+	<target name="install" depends="copyTmpToDeploy"/>
+
+	<target name="update" depends="moveToObsolete,install"/>
+
+</project>
